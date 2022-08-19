@@ -11,18 +11,18 @@ public class Solution {
        int d2 = in.nextInt();
        int m2 = in.nextInt();
        int y2 = in.nextInt();
+       int fine = 0;
+        
+       if(y1>y2) {
+           fine = 10000;
+       }
+       else if(y1==y2 && m1>m2) {
+           fine = 500*(m1-m2);
+       }
+       else if(y1==y2 && m1==m2 && d1>d2) {
+           fine = 15*(d1-d2);
+       }
+       System.out.println(fine);
        
-       if(d1==d2 && m1==m2 && y1==y2) {
-           System.out.println("No Fine");
-       }
-       else if(d1!=d2 && m1==m2 && y1==y2) {
-           System.out.println(15*(d1-d2));
-       }
-       else if(d1==d2 && m1!=m2 && y1==y2) {
-           System.out.println(500*(m1-m2));
-       }
-       else{
-           System.out.println("100000");
-       }
     }
 }
